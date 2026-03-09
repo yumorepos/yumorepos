@@ -7,7 +7,7 @@
 | Project | Description | Tech |
 |---------|-------------|------|
 | [**Polymarket Autopilot**](https://github.com/yumorepos/polymarket-autopilot) | Algorithmic paper trading engine — 10 quant strategies, backtesting, automated reports | Python, async I/O, SQLite, pytest |
-| [**Montreal Housing Dashboard**](https://github.com/yumorepos/montreal-housing-dashboard) | Interactive Streamlit dashboard — 9 Plotly charts, KPI cards, borough filters, dark theme | Python, Streamlit, Plotly, Docker |
+| [**Montreal Housing Dashboard**](https://montreal-housing-dashboard-rdjsnh9h6wxxlkczmbfbcq.streamlit.app) | 🔴 **LIVE** — Interactive Streamlit dashboard with 9 Plotly charts, KPI cards, borough filters | Python, Streamlit, Plotly, Docker |
 | [**Montreal Housing Analysis**](https://github.com/yumorepos/montreal-housing-analysis) | Rental market data analysis with statistical modeling & visualizations | Python, pandas, seaborn, matplotlib |
 | [**Job Hunter**](https://github.com/yumorepos/job-hunter) | Automated job scraper — async multi-source scraping, SQLite dedup, markdown digests | Python, httpx, SQLite, Click, Rich |
 | [**Portfolio**](https://yumorepos.github.io) | Developer portfolio with resume download | HTML/CSS/JS |
@@ -27,7 +27,3 @@
 ## 📫 Let's Connect
 
 🌐 [yumorepos.github.io](https://yumorepos.github.io) · 💼 [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326) · 📄 [Resume](https://yumorepos.github.io/Yumo-Xu-Resume.pdf)
-
----
-
-*Open to opportunities in software development, data analysis, and automation · Montreal, Canada*
