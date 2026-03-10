@@ -1,49 +1,35 @@
-# Yumo Xu
+# Hey, I'm Yumo ⚡
 
-**Python Developer | Building Automated Systems**
+**Self-taught developer** building production-grade systems in Python and TypeScript. Former travel consultant who taught himself to code — and shipped a quantitative trading engine and a full-stack flight platform to prove it.
 
-Montreal, QC | [Portfolio](https://yumorepos.github.io) | [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326)
+## 🔨 Projects
 
----
+| Project | Description | Tech |
+|---------|-------------|------|
+| [**Flight Discovery**](https://github.com/yumorepos/flight-discovery) | 🆕 Full-stack flight deal platform — intelligent scoring algorithm (price + OTA safety + date weighting), 23 destinations | Next.js, FastAPI, TypeScript, Python |
+| [**Polymarket Autopilot**](https://github.com/yumorepos/polymarket-autopilot) | Algorithmic paper trading engine — 10 quant strategies, backtesting, automated reports | Python, async I/O, SQLite, pytest |
+| [**Montreal Housing Dashboard**](https://montreal-housing-dashboard-rdjsnh9h6wxxlkczmbfbcq.streamlit.app) | 🔴 **LIVE** — Interactive Streamlit dashboard with 9 Plotly charts, KPI cards, borough filters | Python, Streamlit, Plotly, Docker |
+| [**Montreal Housing Analysis**](https://github.com/yumorepos/montreal-housing-analysis) | Rental market data analysis with statistical modeling & visualizations | Python, pandas, seaborn, matplotlib |
+| [**Job Hunter**](https://github.com/yumorepos/job-hunter) | Automated job scraper — async multi-source scraping, SQLite dedup, markdown digests | Python, httpx, SQLite, Click, Rich |
+| [**Portfolio**](https://yumorepos.github.io) | Developer portfolio with resume download | HTML/CSS/JS |
 
-## What I'm Building
+## 📊 By the Numbers
 
-**Polymarket Autopilot** — Quantitative trading bot for prediction markets  
-🤖 10 strategies, async API integration, SQLite persistence, 45 automated tests  
-📊 Live paper trading with $9,600 deployed across 21 positions  
-🔗 [Repository](https://github.com/yumorepos/polymarket-autopilot)
+- **9,000+** lines of production code across 5 projects
+- **Full-stack:** Python backend + TypeScript/React frontend
+- **10** quantitative trading strategies
+- **45** automated tests passing
+- **CI/CD** via GitHub Actions on every repo
+- **Docker** containerized
 
-**Montreal Housing Dashboard** — Real-time rental market analysis  
-📈 Interactive Streamlit dashboard with data pipeline + visualizations  
-🏠 Analyzing 1000+ listings across Montreal neighborhoods  
-🔗 [Live Dashboard](https://montreal-housing-dashboard-rdjsnh9h6wxxlkczmbfbcq.streamlit.app) | [Repository](https://github.com/yumorepos/montreal-housing-dashboard)
+## 🛠️ Stack
 
-**Job Hunter** — Automated job scraper with multi-source async scraping  
-🔍 Pulls from Indeed, LinkedIn, and custom sources  
-⚡ Built with httpx, BeautifulSoup, and async I/O  
-🔗 [Repository](https://github.com/yumorepos/job-hunter)
+`Python` `TypeScript` `SQL` `JavaScript` `Bash` · `Next.js` `React` `FastAPI` `pandas` `NumPy` `Streamlit` `Plotly` `SQLite` · `Git` `Docker` `GitHub Actions` `REST APIs` · `pytest` `Playwright` `mypy` `ruff`
 
----
+## 📝 Writing
 
-## Tech Stack
+- [**How I Built a Quantitative Trading Bot as a Self-Taught Developer**](https://www.linkedin.com/feed/update/urn:li:activity:7436191286480498688/) — My journey from travel agent to building a 3,600-line algorithmic trading engine
 
-**Languages:** Python (primary), SQL, JavaScript  
-**Data:** Pandas, SQLite, data visualization, statistical analysis  
-**Infrastructure:** Docker, GitHub Actions, async/await, REST APIs  
-**Testing:** pytest, mypy strict type-checking, CI/CD pipelines
+## 📫 Let's Connect
 
----
-
-## About
-
-Six months ago I was a travel agent. Today I build automated systems.
-
-I'm looking for Python development, data analysis, or automation engineering roles in Montreal or remote. I learn by building real systems that solve real problems.
-
-📄 [Resume](https://yumorepos.github.io/Yumo-Xu-Resume.pdf)  
-💼 [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326)  
-🌐 [Portfolio Site](https://yumorepos.github.io)
-
----
-
-*Currently: Paper trading a quant bot, analyzing Montreal housing data, and applying to tech roles.*
+🌐 [yumorepos.github.io](https://yumorepos.github.io) · 💼 [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326) · 📄 [Resume](https://yumorepos.github.io/Yumo-Xu-Resume.pdf)
