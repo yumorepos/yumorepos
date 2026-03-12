@@ -31,7 +31,7 @@ This repository currently contains **project foundation scaffolding only**:
 - Monorepo directory layout
 - Minimal Next.js app skeleton
 - Minimal FastAPI app skeleton with health endpoint
-- Placeholder pipeline scripts
+- Implemented MVP batch pipeline foundation in `scripts/` (raw/staging/marts/load)
 - Implemented Postgres analytics schema v1 (`sql/schema.sql`)
 - Initial project documentation skeleton
 
@@ -42,7 +42,7 @@ Analytics logic, full product UI, and production hardening are intentionally not
 - `frontend/` — Next.js app shell and UI foundation
 - `backend/` — FastAPI app shell and API foundation
 - `data/` — raw/staging/marts directories for data lifecycle
-- `scripts/` — placeholder ETL/transformation scripts
+- `scripts/` — MVP batch ingestion, transforms, and Postgres load scripts
 - `sql/` — schema definition (MVP analytics v1)
 - `docs/` — architecture, methodology, roadmap, and data dictionary drafts
 
@@ -76,7 +76,7 @@ curl http://localhost:8000/health
 
 ## Next steps
 
-- Expand data loading scripts against the implemented schema contracts
+- Validate pipeline scripts against real BTS/FAA source extracts
 - Implement ingestion scripts for selected public datasets
 - Build derived analytics tables and API endpoints
 - Implement MVP frontend route intelligence views
