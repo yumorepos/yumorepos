@@ -2,7 +2,7 @@
 
 ## Overview
 - **Frontend:** Next.js (scaffold only)
-- **Backend:** FastAPI (scaffold only)
+- **Backend:** FastAPI MVP analytics API (health, airports, routes, metadata)
 - **Data pipeline:** Python batch scripts in `scripts/`
 - **Database:** PostgreSQL schema v1 in `sql/schema.sql`
 
@@ -92,4 +92,20 @@ Warnings are logged; invalid rows are skipped.
 - Automated source download/auth workflows.
 - Orchestration/scheduling (intentionally excluded for MVP).
 - Advanced scoring formulas and production-grade observability.
-- API-serving layer for mart outputs.
+
+
+## API layer (implemented in this phase)
+
+Implemented endpoints in `backend/app/api/`:
+- `GET /health`
+- `GET /airports/search?q=`
+- `GET /routes/explore?origin=XXX`
+- `GET /routes/{origin}/{destination}`
+- `GET /airports/{iata}/context`
+- `GET /meta/methodology`
+
+Design notes:
+- Typed response contracts are defined in `backend/app/schemas/`.
+- Data endpoints are designed for PostgreSQL-first usage in product architecture, with an explicit local marts CSV fallback mode for MVP demos (`FPI_USE_CSV_FALLBACK=true`).
+- If neither Postgres nor fallback mode is available, data endpoints return `503` rather than synthetic data.
+- Methodology metadata is served from versioned API constants in the service layer.

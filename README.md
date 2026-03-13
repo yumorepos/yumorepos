@@ -30,12 +30,12 @@ This repository is intended to demonstrate:
 This repository currently contains **project foundation scaffolding only**:
 - Monorepo directory layout
 - Minimal Next.js app skeleton
-- Minimal FastAPI app skeleton with health endpoint
+- FastAPI analytics API layer with health, airport, route, and methodology endpoints
 - Implemented MVP batch pipeline foundation in `scripts/` (raw/staging/marts/load)
 - Implemented Postgres analytics schema v1 (`sql/schema.sql`)
 - Initial project documentation skeleton
 
-Core analytics marts are implemented, including a first-pass heuristic `route_scores` layer; full product UI and production hardening are still intentionally not implemented yet.
+Core analytics marts are implemented, including a first-pass heuristic `route_scores` layer. The backend now exposes MVP analytics read endpoints backed by Postgres-oriented queries; production hardening is still intentionally not implemented yet.
 
 ## High-level architecture
 
@@ -68,15 +68,20 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 ```
 
-Health check endpoint:
+Example endpoints:
 
 ```bash
 curl http://localhost:8000/health
+curl "http://localhost:8000/airports/search?q=jfk"
+curl "http://localhost:8000/routes/explore?origin=JFK"
+curl http://localhost:8000/routes/JFK/LAX
+curl http://localhost:8000/airports/JFK/context
+curl http://localhost:8000/meta/methodology
 ```
 
 ## Next steps
 
 - Validate pipeline scripts against real BTS/FAA source extracts
 - Implement ingestion scripts for selected public datasets
-- Build derived analytics tables and API endpoints
+- Expand analytics API depth and harden DB connectivity for production
 - Implement MVP frontend route intelligence views
