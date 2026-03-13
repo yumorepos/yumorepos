@@ -84,6 +84,8 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
+# For MVP demo mode (works without Postgres), enable CSV fallback:
+echo "FPI_USE_CSV_FALLBACK=true" >> .env
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
