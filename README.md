@@ -1,135 +1,271 @@
-# Flight Price Intelligence Lab
+# ✈️ Flight Price Intelligence Lab
 
-Flight Price Intelligence Lab is a portfolio-grade product prototype that turns public aviation datasets into **route-level decision intelligence**.
+A full-stack aviation analytics product that evaluates airline route attractiveness using historical airfare trends, operational reliability signals, and airport context.
 
-It is intentionally built as an honest MVP: strong enough to demonstrate product thinking + analytics engineering, while being explicit about current limits.
+This project demonstrates how public aviation datasets can be transformed into a transparent decision-support tool for exploratory route intelligence.
 
-## What this project is
+---
 
-A full-stack analytics app where users can:
-- Search origin airports
-- Explore destination routes with a composite route score
-- Inspect route-level fare/reliability history
-- Review data provenance, confidence, and methodology caveats
+# Product Preview
 
-## Why it matters
+## Route Explorer
 
-Aviation and travel decisions often mix imperfect operational data, noisy fare signals, and stakeholder pressure for clear recommendations. This project demonstrates how to:
-- Build trustworthy analytics UX under imperfect data conditions
-- Explain scoring logic without pretending model certainty
-- Keep product narrative and technical implementation aligned
+![Route Explorer](docs/screenshots/route-explorer.png)
 
-## What makes it different
+## Route Detail
 
-- **Explainable scoring, not black-box theater:** route scoring is deterministic and documented.
-- **Trust-first UX:** provenance, fallback mode, and incomplete coverage are surfaced.
-- **End-to-end delivery:** data pipeline foundation, API contracts, and product UI shipped together.
-- **Portfolio realism:** docs describe what works, what is partial, and what is missing.
+![Route Detail](docs/screenshots/route-detail.png)
 
-## Architecture at a glance
+---
 
-- **Frontend:** Next.js + TypeScript (`frontend/`)
-- **Backend:** FastAPI (`backend/`)
-- **Data pipeline:** Python batch scripts (`scripts/`)
-- **Storage:** PostgreSQL schema v1 (`sql/schema.sql`)
-- **Data lifecycle:** `data/raw` → `data/staging` → `data/marts`
+# Why This Project Exists
 
-For deeper detail, see `docs/architecture.md`.
+Airfare search tools focus on **finding flights**, not **understanding routes**.
 
-## Data sources (MVP scope)
+Flight Price Intelligence Lab explores a different question:
 
-1. BTS DB1B (fare aggregates)
-2. BTS On-Time Performance (reliability/cancellations)
-3. FAA enplanements (airport context)
+> *How attractive is this route historically?*
 
-No real-time market feed is currently implemented.
+The app surfaces:
 
-## Methodology summary
+* historical fare patterns
+* reliability signals
+* route-relative pricing signals
+* airport market context
+* transparent heuristic scoring
 
-The product reports two primary route-level signals:
+The goal is **exploratory analytics**, not operational forecasting.
 
-- **Route score (0–100):** heuristic blend of fare attractiveness, reliability, and fare stability.
-- **Deal signal:** relative pricing label (`strong_deal`, `deal`, `neutral`, `expensive`) versus route historical baseline.
+---
 
-These are directional intelligence signals, not price predictions or revenue forecasts.
+# Key Features
 
-For details and caveats, see `docs/methodology.md`.
+### Route Explorer
 
-## Current implementation status
+Search an origin airport to explore historically attractive routes.
 
-### Definitely implemented
-- Route Explorer and Route Detail flows with score + trend views
-- Provenance metadata surfaced in API and UI
-- FastAPI read endpoints for airports, routes, context, and methodology
-- MVP batch pipeline foundation from raw/staging/marts to Postgres load
+Each route card shows:
 
-### Partially implemented
-- Reliability coverage varies by route/month in fallback mode
-- Airport metadata completeness depends on loaded slices
-- Score confidence is useful but not yet deeply diagnostic in UI
+* route attractiveness score
+* deal signal vs historical baseline
+* latest observed fare insight
+* reliability cues (when available)
+* score confidence
 
-### Not implemented yet
-- Production orchestration/scheduling
-- Real-time/near-real-time refresh
-- Auth, role-based access, observability, SLOs
-- Statistical calibration framework for score drift
+---
 
-## Local run instructions
+### Route Detail View
 
-### 1) Backend
+Deep-dive analytics for a specific route.
+
+Includes:
+
+* score breakdown
+* cheapest observed month
+* fare trend visualization
+* reliability trend
+* airport context
+* methodology explanation
+
+---
+
+### Transparent Data Provenance
+
+The interface clearly shows:
+
+* data source
+* fallback mode
+* coverage completeness
+
+This prevents users from over-interpreting thin data.
+
+---
+
+# Architecture
+
+```
+BTS + FAA datasets
+        │
+        ▼
+Python ETL pipeline
+scripts/
+        │
+        ▼
+Postgres analytics schema
+monthly_fares
+ontime_stats
+route_scores
+        │
+        ▼
+FastAPI analytics API
+backend/
+        │
+        ▼
+Next.js product UI
+frontend/
+```
+
+---
+
+# Technology Stack
+
+Frontend
+
+* Next.js
+* TypeScript
+* Component-driven UI
+
+Backend
+
+* FastAPI
+* Python
+
+Data / Analytics
+
+* Python + Pandas
+* SQL analytics modeling
+
+Database
+
+* PostgreSQL
+
+Datasets
+
+* BTS On-Time Performance
+* BTS DB1B Ticket Sample
+* FAA Airport Enplanements
+
+---
+
+# Data Sources
+
+### BTS On-Time Performance
+
+Used to calculate operational reliability metrics.
+
+### BTS DB1B
+
+Used for historical fare trend analysis.
+
+### FAA Enplanement Data
+
+Provides airport size and passenger context.
+
+---
+
+# Methodology (Simplified)
+
+Route attractiveness is a heuristic blend of:
+
+```
+route_score =
+  45% price attractiveness
+  35% operational reliability
+  20% price stability
+```
+
+Deal signals compare current observed fare against the route’s historical baseline.
+
+The system intentionally avoids predictive claims.
+
+---
+
+# Local Development
+
+Start backend:
 
 ```bash
 cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-# For MVP demo mode (works without Postgres), enable CSV fallback:
-echo "FPI_USE_CSV_FALLBACK=true" >> .env
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload
 ```
 
-### 2) Frontend
+Start frontend:
 
 ```bash
 cd frontend
 npm install
-cp .env.example .env.local
 npm run dev
 ```
 
-App URL: `http://localhost:3000`
+Visit:
 
-By default, frontend requests `/api/*` and Next.js rewrites to backend `http://127.0.0.1:8000` for local development.
-
-### 3) Quick API checks
-
-```bash
-curl http://localhost:8000/health
-curl "http://localhost:8000/airports/search?q=jfk"
-curl "http://localhost:8000/routes/explore?origin=JFK"
-curl http://localhost:8000/routes/JFK/LAX
-curl http://localhost:8000/airports/JFK/context
-curl http://localhost:8000/meta/methodology
+```
+http://localhost:3000
 ```
 
-## Limitations (explicit)
+---
 
-- Historical coverage is limited to loaded datasets/slices.
-- Fallback CSV mode can be incomplete and should be treated carefully.
-- Scoring is heuristic and not validated for operational deployment decisions.
-- UX is portfolio-polished, but production non-functionals are still missing.
+# Current Project Status
 
-## Roadmap
+This project is a **portfolio-grade MVP**, not a production system.
 
-See `docs/roadmap.md` for the phased path from MVP to production-grade platform.
+Implemented:
 
-## Why this is a strong portfolio project
+* analytics schema
+* ETL pipeline scripts
+* heuristic route scoring
+* FastAPI analytics API
+* Next.js product UI
 
-This project demonstrates the intersection of:
-- Product strategy (decision-oriented UX)
-- Analytics architecture (traceable marts and data contracts)
-- Full-stack execution (frontend + backend integration)
-- Technical honesty (clear caveats, scope boundaries, and next steps)
+Not implemented:
 
-It is not positioned as “production-ready.” It is positioned as **high-quality, credible, and thoughtfully scoped**.
+* automated data refresh orchestration
+* production monitoring
+* calibrated forecasting models
+* authentication
+* infrastructure hardening
+
+---
+
+# Future Improvements
+
+Possible extensions:
+
+* automated dataset ingestion
+* richer reliability metrics
+* forecast models for price seasonality
+* airline-level performance analysis
+* global route coverage
+
+---
+
+# Author
+
+Built by **Yumo**
+Aviation analytics enthusiast and data-driven product builder.
+
+
+# Architecture Overview
+
+```
+Public Aviation Data
+(BTS / FAA)
+        │
+        ▼
+Python ETL Pipeline
+scripts/
+        │
+        ▼
+Analytics Tables
+Postgres
+───────────────
+airports
+routes
+monthly_fares
+ontime_stats
+route_scores
+───────────────
+        │
+        ▼
+FastAPI Service
+backend/
+        │
+        ▼
+Next.js Product UI
+frontend/
+        │
+        ▼
+User Interface
+Route Explorer
+Route Detail
+```
