@@ -1,271 +1,51 @@
-# ✈️ Flight Price Intelligence Lab
+# Hey, I'm Yumo 👋
 
-A full-stack aviation analytics product that evaluates airline route attractiveness using historical airfare trends, operational reliability signals, and airport context.
+**Self-taught software developer in Montreal** building trading systems, data platforms, and full-stack web apps.
 
-This project demonstrates how public aviation datasets can be transformed into a transparent decision-support tool for exploratory route intelligence.
-
----
-
-# Product Preview
-
-## Route Explorer
-
-![Route Explorer](docs/screenshots/route-explorer.png)
-
-## Route Detail
-
-![Route Detail](docs/screenshots/route-detail.png)
+Currently transitioning into tech from travel operations — shipping real projects, not just tutorials.
 
 ---
 
-# Why This Project Exists
+## 🔥 What I'm Building
 
-Airfare search tools focus on **finding flights**, not **understanding routes**.
-
-Flight Price Intelligence Lab explores a different question:
-
-> *How attractive is this route historically?*
-
-The app surfaces:
-
-* historical fare patterns
-* reliability signals
-* route-relative pricing signals
-* airport market context
-* transparent heuristic scoring
-
-The goal is **exploratory analytics**, not operational forecasting.
+| Project | What It Does | Stack |
+|---------|-------------|-------|
+| [**Polymarket Autopilot**](https://github.com/yumorepos/polymarket-autopilot) | Algorithmic paper trading engine for prediction markets — 10 strategies, Kelly criterion sizing, 45+ tests | Python, Pandas, SQLite |
+| [**Cross-Market Signals**](https://github.com/yumorepos/cross-market-signals) | Detects trading signals by correlating Polymarket events with Hyperliquid perp markets | Python, REST APIs, SQLite |
+| [**Hyperliquid Analyzer**](https://github.com/yumorepos/hyperliquid-funding-analyzer) | Real-time funding rate analysis across 190+ perpetual markets — identifies arbitrage opportunities | Python, Pandas |
+| [**Flight Discovery**](https://github.com/yumorepos/flight-discovery) | Full-stack flight deal platform with intelligent scoring algorithm — 26+ destinations | FastAPI, Next.js, TypeScript |
+| [**Housing Dashboard**](https://github.com/yumorepos/montreal-housing-dashboard) | Interactive Montreal housing analytics — [**Live on Streamlit**](https://montreal-housing-dashboard-rdjsnh9h6wxxlkczmbfbcq.streamlit.app) | Python, Streamlit, Plotly |
+| [**Job Hunter**](https://github.com/yumorepos/job-hunter) | Automated job scraper with async scraping, SQLite dedup, markdown digests | Python, httpx, SQLite |
 
 ---
 
-# Key Features
+## 🛠️ Tech Stack
 
-### Route Explorer
+**Languages:** Python · TypeScript · JavaScript · SQL · Bash
 
-Search an origin airport to explore historically attractive routes.
+**Backend:** FastAPI · REST APIs · async I/O · SQLite · PostgreSQL
 
-Each route card shows:
+**Frontend:** Next.js · React · Tailwind CSS · Framer Motion
 
-* route attractiveness score
-* deal signal vs historical baseline
-* latest observed fare insight
-* reliability cues (when available)
-* score confidence
+**Data:** Pandas · NumPy · Plotly · Streamlit · Statistical Modeling
+
+**Tools:** Git · Docker · Linux/macOS · pytest · CI/CD
 
 ---
 
-### Route Detail View
+## 📊 Stats
 
-Deep-dive analytics for a specific route.
-
-Includes:
-
-* score breakdown
-* cheapest observed month
-* fare trend visualization
-* reliability trend
-* airport context
-* methodology explanation
+- **12 public repositories** — all built from scratch
+- **9,000+ lines** of production Python
+- **1 live deployed app** (Montreal Housing Dashboard)
+- **CS50 completed** (Harvard/edX)
 
 ---
 
-### Transparent Data Provenance
+## 🎯 What I'm Looking For
 
-The interface clearly shows:
+Python Developer, Data Analyst, or Automation Engineer roles — Montreal or Remote.
 
-* data source
-* fallback mode
-* coverage completeness
+I learn by building. Every repo here is a real project solving a real problem.
 
-This prevents users from over-interpreting thin data.
-
----
-
-# Architecture
-
-```
-BTS + FAA datasets
-        │
-        ▼
-Python ETL pipeline
-scripts/
-        │
-        ▼
-Postgres analytics schema
-monthly_fares
-ontime_stats
-route_scores
-        │
-        ▼
-FastAPI analytics API
-backend/
-        │
-        ▼
-Next.js product UI
-frontend/
-```
-
----
-
-# Technology Stack
-
-Frontend
-
-* Next.js
-* TypeScript
-* Component-driven UI
-
-Backend
-
-* FastAPI
-* Python
-
-Data / Analytics
-
-* Python + Pandas
-* SQL analytics modeling
-
-Database
-
-* PostgreSQL
-
-Datasets
-
-* BTS On-Time Performance
-* BTS DB1B Ticket Sample
-* FAA Airport Enplanements
-
----
-
-# Data Sources
-
-### BTS On-Time Performance
-
-Used to calculate operational reliability metrics.
-
-### BTS DB1B
-
-Used for historical fare trend analysis.
-
-### FAA Enplanement Data
-
-Provides airport size and passenger context.
-
----
-
-# Methodology (Simplified)
-
-Route attractiveness is a heuristic blend of:
-
-```
-route_score =
-  45% price attractiveness
-  35% operational reliability
-  20% price stability
-```
-
-Deal signals compare current observed fare against the route’s historical baseline.
-
-The system intentionally avoids predictive claims.
-
----
-
-# Local Development
-
-Start backend:
-
-```bash
-cd backend
-uvicorn app.main:app --reload
-```
-
-Start frontend:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Visit:
-
-```
-http://localhost:3000
-```
-
----
-
-# Current Project Status
-
-This project is a **portfolio-grade MVP**, not a production system.
-
-Implemented:
-
-* analytics schema
-* ETL pipeline scripts
-* heuristic route scoring
-* FastAPI analytics API
-* Next.js product UI
-
-Not implemented:
-
-* automated data refresh orchestration
-* production monitoring
-* calibrated forecasting models
-* authentication
-* infrastructure hardening
-
----
-
-# Future Improvements
-
-Possible extensions:
-
-* automated dataset ingestion
-* richer reliability metrics
-* forecast models for price seasonality
-* airline-level performance analysis
-* global route coverage
-
----
-
-# Author
-
-Built by **Yumo**
-Aviation analytics enthusiast and data-driven product builder.
-
-
-# Architecture Overview
-
-```
-Public Aviation Data
-(BTS / FAA)
-        │
-        ▼
-Python ETL Pipeline
-scripts/
-        │
-        ▼
-Analytics Tables
-Postgres
-───────────────
-airports
-routes
-monthly_fares
-ontime_stats
-route_scores
-───────────────
-        │
-        ▼
-FastAPI Service
-backend/
-        │
-        ▼
-Next.js Product UI
-frontend/
-        │
-        ▼
-User Interface
-Route Explorer
-Route Detail
-```
+📬 [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326) · [Portfolio](https://yumorepos.github.io)
