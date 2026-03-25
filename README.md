@@ -1,27 +1,25 @@
 # Hey, I'm Yumo ⚡
 
-**Self-taught developer** building production-grade systems in Python and TypeScript. Former travel consultant who taught himself to code — and shipped a quantitative trading engine and a full-stack flight platform to prove it.
+**Self-taught developer** building real systems in Python and TypeScript. Former travel consultant who taught himself to code — and shipped a quantitative trading engine and a full-stack aviation platform to prove it.
 
 ## 🔨 Featured Projects
 
 | Project | Description | Tech |
 |---------|-------------|------|
-| [**Trading Agency Agents**](https://github.com/yumorepos/trading-agency-agents) | 🆕 4 specialized AI agents for prediction market trading — validated +11.4% return, 60% win rate across 42 trades | Python, The Agency Framework, pytest, GitHub Actions |
-| [**Flight Price Intelligence Lab**](https://github.com/yumorepos/flight-price-intelligence-lab) | 🔴 **LIVE** — Full-stack aviation analytics platform with route scoring (0-100), deal signals, and interactive visualizations | Next.js 14, TypeScript, FastAPI, PostgreSQL, Recharts |
-| [**Polymarket Autopilot**](https://github.com/yumorepos/polymarket-autopilot) | End-to-end trading system — market ingestion, strategy evaluation, risk-constrained execution, backtesting, dashboard | Python 3.12+, FastAPI, SQLite, pytest, Streamlit |
-| [**Montreal Housing Dashboard**](https://montreal-housing-dashboard-rdjsnh9h6wxxlkczmbfbcq.streamlit.app) | Interactive Streamlit dashboard with 9 Plotly charts, KPI cards, borough filters | Python, Streamlit, Plotly, Docker |
-| [**Job Hunter**](https://github.com/yumorepos/job-hunter) | Automated job scraper — async multi-source scraping, SQLite dedup, markdown digests | Python, httpx, SQLite, Click, Rich |
-| [**Portfolio**](https://yumorepos.github.io/portfolio/) | Developer portfolio with truthful project communication | HTML/CSS/JS |
+| [**Autonomous Trading System**](https://github.com/yumorepos/autonomous-trading-system) | 7-layer paper-trading research engine for Hyperliquid perpetuals + Polymarket prediction markets — CI-backed, 667KB Python | Python, pytest, GitHub Actions |
+| [**Avgeek Intelligence Lab**](https://github.com/yumorepos/avgeek-intelligence-lab) | Aviation intelligence platform — route competitiveness analytics, real FastAPI backend, PostgreSQL/CSV data modes | Next.js 14, TypeScript, FastAPI, Python |
+| [**Polymarket Autopilot**](https://github.com/yumorepos/polymarket-autopilot) | Paper-trading research engine — market ingestion, strategy evaluation, risk-constrained execution, backtesting, dashboard | Python 3.12+, SQLite, pytest, Streamlit |
+| [**Flight Discovery**](https://github.com/yumorepos/flight-discovery) | 🔴 **LIVE** — Destination-first flight deal discovery with value scoring, 26+ destinations, Next.js + FastAPI | Next.js 14, TypeScript, FastAPI, Tailwind |
+| [**Montreal Housing Dashboard**](https://montreal-housing-dashboard-rdjsnh9h6wxxlkczmbfbcq.streamlit.app) | 🔴 **LIVE** — Interactive Streamlit dashboard with 9 Plotly charts, KPI cards, borough filters | Python, Streamlit, Plotly, Docker |
+| [**Job Hunter**](https://github.com/yumorepos/job-hunter) | Automated job scraper — async multi-source collection, SQLite dedup, markdown digests, CLI | Python, httpx, SQLite, Click, Rich |
 
 ## 📊 By the Numbers
 
-- **12,000+** lines of production code across 6 flagship projects
+- **15 repos**, 5 flagship projects, 3 live deployments
 - **Full-stack:** Python backend + TypeScript/React frontend
-- **4** specialized AI trading agents + **10** quantitative strategies
-- **+11.4% return, 60% win rate** validated across 42 paper trades
-- **80+** automated tests passing
-- **CI/CD** via GitHub Actions on every repo
-- **Deployed:** 2 live production apps (Flight Lab, Housing Dashboard)
+- **70+ automated tests** passing across repos
+- **CI/CD** via GitHub Actions on every active repo
+- **Deployed:** Flight Discovery (Vercel), Housing Dashboard (Streamlit Cloud), QueerNomads (Vercel)
 
 ## 🛠️ Stack
 
@@ -33,4 +31,4 @@
 
 ## 📫 Let's Connect
 
-🌐 [yumorepos.github.io/portfolio](https://yumorepos.github.io/portfolio/) · 💼 [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326) · 📄 [Resume](https://yumorepos.github.io/portfolio/resume.html)
+🌐 [yumorepos.github.io](https://yumorepos.github.io) · 💼 [LinkedIn](https://linkedin.com/in/yumo-xu-1589b7326) · 📄 [Resume](https://yumorepos.github.io/Yumo-Xu-Resume.pdf)
